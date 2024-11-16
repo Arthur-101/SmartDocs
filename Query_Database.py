@@ -37,7 +37,7 @@ def query_faiss_snova(question, top_k=5, chunk_folder=config.TEXT_CHUNKS_FOLDER,
 
     user_message = f"Context: {context}\n\nQuestion: {question}\nAnswer:"
     completion = client.chat.completions.create(
-        model="Meta-Llama-3.1-8B-Instruct",
+        model="Meta-Llama-3.1-405B-Instruct",
         messages=[{"role": "system", "content": sys_prompt}, {"role": "user", "content": user_message}],
         stream=True,
     )
