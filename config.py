@@ -6,6 +6,9 @@ EXTRACTED_TEXT_PATH = "extracted_text.txt"
 TEXT_CHUNKS_FOLDER = "Text_chunks"
 FAISS_INDEX_PATH = "faiss_index.bin"
 
-# SambaNova API configuration (if applicable)
+# API configuration
+from dotenv import load_dotenv
+load_dotenv()
+
 SAMBANOVA_API_URL = "https://fast-api.snova.ai/v1"
-SAMBANOVA_API_KEY = "fc14a416-cf9b-4fb6-be8a-4feb7dbca02f"
+SAMBANOVA_API_KEY = os.getenv('SAMBANOVA_API_KEY')
