@@ -2,7 +2,7 @@ import os
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-import config  # Import the config file
+import config
 
 def generate_embeddings_and_index(chunk_folder=config.TEXT_CHUNKS_FOLDER, index_path=config.FAISS_INDEX_PATH):
     chunks = []
