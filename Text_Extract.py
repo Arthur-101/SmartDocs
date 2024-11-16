@@ -1,5 +1,5 @@
 from PyPDF2 import PdfReader
-import config  # Import the config file
+import config 
 
 def extract_pdf_text(file_path):
     reader = PdfReader(file_path)
