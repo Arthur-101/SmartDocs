@@ -3,7 +3,7 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from openai import OpenAI
-import config  # Import the config file
+import config
 
 SAMBANOVA_API_URL = config.SAMBANOVA_API_URL
 SAMBANOVA_API_KEY = config.SAMBANOVA_API_KEY
