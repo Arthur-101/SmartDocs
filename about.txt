@@ -1,0 +1,11 @@
+>>>  SmartDocs is an intelligent PDF assistant designed to make document interaction seamless and efficient.
+
+With SmartDocs, users can upload PDF documents and instantly ask questions based on the content, receiving precise and context-aware answers.
+
+SmartDocs processes and extracts meaningful text from PDFs, splits the information into manageable chunks, and delivers accurate responses through its AI-powered query system.
+
+At its core, SmartDocs uses the Llama 3.1 models for querying and FAISS for fast and reliable vector search, combined with the highly efficient MiniLM-L6-v2 embeddings.
+
+Whether you're a student, professional, or researcher, SmartDocs is your go-to tool for navigating large documents effortlessly, saving time, and increasing productivity.
+
+To start, Upload a PDF document, and then proceed.
