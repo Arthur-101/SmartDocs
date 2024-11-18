@@ -2,7 +2,7 @@
 # import tkinter as tk
 # from tkinter import filedialog, messagebox
 from customtkinter import *
-from tkinter import textbox
+# from tkinter import textbox
 
 # Custom modules for configuration, text extraction, chunking, embedding, and querying
 import config
@@ -159,7 +159,7 @@ class SmartDocsApp:
         # self.control_frame.place(relx=0, rely=0.8, relwidth=1, relheight=0.2)
 
         self.query_box = CTkTextbox(self.main_frame, font=("Helvetica", 18),
-                                border_width=2, corner_radius=15, wrap="word",
+                                border_width=1, corner_radius=15, wrap="word",
                                 )
         self.query_box.place(relx=0.2, rely=0.83, relwidth=0.6, relheight=0.15)
 
@@ -173,10 +173,15 @@ class SmartDocsApp:
                                 )#command=self.back_to_main)
         self.back_button.place(relx=0.01, rely=0.05, relwidth=0.08, relheight=0.05)
 
+        self.export_button = CTkButton(self.main_frame, text="Export", font=("Helvetica", 18),
+                                border_width=2, corner_radius=0,
+                                )#command=self.export_query)
+        self.export_button.place(relx=0.91, rely=0.05, relwidth=0.08, relheight=0.05)
+
 
         # Creating the Output Panel
         self.output_query_textbox = CTkTextbox(self.main_frame, font=("Helvetica", 18),
-                                border_width=2, corner_radius=0, state="disabled",
+                                border_width=0, corner_radius=0, state="disabled",
                                 )
         self.output_query_textbox.place(relx=0.1, rely=0.05, relwidth=0.8, relheight=0.75)
         
