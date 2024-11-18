@@ -1,16 +1,5 @@
-# Necessary libraries for the GUI application
-# import tkinter as tk
-# from tkinter import filedialog, messagebox
 from customtkinter import *
-# from tkinter import textbox
-
-# Custom modules for configuration, text extraction, chunking, embedding, and querying
 import config
-# import Text_Extract
-# import Divide_Chunk
-# import Embedding_and_vector
-# import Query_Database
-
 import time
 
 # Defining a class for the Application
@@ -161,12 +150,16 @@ class SmartDocsApp:
         self.query_box = CTkTextbox(self.main_frame, font=("Helvetica", 18),
                                 border_width=1, corner_radius=15, wrap="word",
                                 )
-        self.query_box.place(relx=0.2, rely=0.83, relwidth=0.6, relheight=0.15)
+        self.query_box.place(relx=0.16, rely=0.83, relwidth=0.6, relheight=0.15)
+
+        # constraint to enable submit_button when query_box is not empty
+        self.query_box.bind("<KeyRelease>", lambda event: check_query_box())
+        
 
         self.submit_button = CTkButton(self.main_frame, text="Submit", font=("Helvetica", 18),
-                                border_width=2, corner_radius=20,
+                                border_width=2, corner_radius=20, state="disabled",
                                 )#command=self.submit_query)
-        self.submit_button.place(relx=0.805, rely=0.84, relwidth=0.08, relheight=0.13)
+        self.submit_button.place(relx=0.765, rely=0.84, relwidth=0.08, relheight=0.13)
 
         self.back_button = CTkButton(self.main_frame, text="Back", font=("Helvetica", 18),
                                 border_width=2, corner_radius=0,
@@ -188,58 +181,16 @@ class SmartDocsApp:
 
 
 
+        # Enabling submit_button when query_box is not empty
+        def check_query_box():
+            if self.query_box.get("1.0", "end-1c").strip():  # Check if there's any text (ignores whitespace)
+                self.submit_button.configure(state="normal")  # Enable the button
+            else:
+                self.submit_button.configure(state="disabled")  # Disable the button
 
 
 
-    # # Load a PDF file using file dialog
-    # def load_pdf(self):
-    #     file_path = filedialog.askopenfilename(filetypes=[("PDF files", "*.pdf")])  # Open file dialog to select a PDF
-    #     if file_path:
-    #         self.input_pdf = file_path  # Set the input PDF path
-    #         messagebox.showinfo("PDF Loaded", f"PDF file loaded: {file_path}")
-    #     else:
-    #         messagebox.showwarning("No File", "No PDF file selected.")
-
-    # # Extract text from the loaded PDF
-    # def extract_text(self):
-    #     if not self.input_pdf:
-    #         messagebox.showwarning("No PDF", "Please load a PDF file first.")  # Show warning if no PDF is loaded
-    #         return
-
-    #     try:
-    #         Text_Extract.extract_and_save_text(self.input_pdf, self.output_txt)  # Call function to extract and save text
-    #         messagebox.showinfo("Extraction Completed", f"Text extracted to: {self.output_txt}")
-    #     except Exception as e:
-    #         messagebox.showerror("Error", f"An error occurred during text extraction: {str(e)}")
-
-    # # Chunk the extracted text into smaller parts
-    # def chunk_text(self):
-    #     try:
-    #         Divide_Chunk.chunk_and_save(input_file=self.output_txt, chunk_size=2000, overlap=200, output_dir=self.chunk_folder)  # Chunk the text
-    #         messagebox.showinfo("Chunking Completed", f"Text chunked and saved in: {self.chunk_folder}")
-    #     except Exception as e:
-    #         messagebox.showerror("Error", f"An error occurred during text chunking: {str(e)}")
-
-    # # Generate embeddings for the chunks and create FAISS index
-    # def generate_embeddings(self):
-    #     try:
-    #         Embedding_and_vector.generate_embeddings_and_index(chunk_folder=self.chunk_folder, index_path=self.index_path)  # Generate embeddings
-    #         messagebox.showinfo("Embedding Generation", f"Embeddings generated and saved to: {self.index_path}")
-    #     except Exception as e:
-    #         messagebox.showerror("Error", f"An error occurred during embedding generation: {str(e)}")
-
-    # # Query the FAISS index using the user's input
-    # def query_database(self):
-    #     user_query = tk.simpledialog.askstring("Query", "Enter your query:")  # Prompt for user input
-    #     if user_query:
-    #         try:
-    #             response = Query_Database.query_faiss_snova(user_query, top_k=5, chunk_folder=self.chunk_folder, index_path=self.index_path)  # Query the database
-    #             messagebox.showinfo("Query Response", f"Response: {response}")
-    #         except Exception as e:
-    #             messagebox.showerror("Error", f"An error occurred during querying: {str(e)}")
-    #     else:
-    #         messagebox.showwarning("No Query", "Please enter a query.")  # Warn if no query is entered
-
+    
 # Main entry point of the application
 if __name__ == "__main__":
     root = CTk()  # Create the main window
