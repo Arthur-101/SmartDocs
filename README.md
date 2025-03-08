@@ -9,6 +9,8 @@ With **SmartDocs**, you can:
 
 Whether you're a researcher, student, or professional, **SmartDocs** streamlines the way you engage with PDFs, making information retrieval effortless and efficient.  
 
+📹 **Watch the Demo Video**: [SmartDocs Demo](demo/SmartDocs_Preview.mp4)
+
 ---
 
 ## ✨ Features  
@@ -72,3 +74,6 @@ Users can save their queries and responses in .txt format for future reference
 ##### 1. Multi-PDF Support – Upload and process multiple PDFs at once
 ##### 2. Support for More File Formats – DOCX, TXT, and more
 ##### 3. TTS & STT Integration – Convert text to speech and speech to text
+
+## 📜 License
+This project is open-source under the [MIT License](MIT License)
