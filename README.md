@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/4fc08957-3447-4b3d-b5fe-ef8d70782646
 
 ### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/yourusername/SmartDocs.git
+git clone https://github.com/Arthur-101/SmartDocs.git
 cd SmartDocs
 ```
   
