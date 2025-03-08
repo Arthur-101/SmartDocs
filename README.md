@@ -76,4 +76,4 @@ Users can save their queries and responses in .txt format for future reference
 ##### 3. TTS & STT Integration – Convert text to speech and speech to text
 
 ## 📜 License
-This project is open-source under the [MIT License](MIT License)
+This project is open-source under the [MIT License](MIT_License)
