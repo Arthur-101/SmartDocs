@@ -20,7 +20,5 @@ def extract_and_save_text(input_pdf=None, output_txt=config.EXTRACTED_TEXT_PATH)
     if input_pdf:
         pdf_text = extract_pdf_text(input_pdf)  # Extract text from the PDF
         write_text_to_file(pdf_text, output_txt)  # Save text to file
-        # print(f"Text has been extracted and written to '{output_txt}'")
     else:
-        # print("No PDF path provided!")
         pass

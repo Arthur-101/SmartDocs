@@ -24,9 +24,7 @@ def save_chunks(chunks, output_dir=config.TEXT_CHUNKS_FOLDER):
 def chunk_and_save(input_file=config.EXTRACTED_TEXT_PATH, chunk_size=2000, overlap=200, output_dir=config.TEXT_CHUNKS_FOLDER):
     text = read_text_file(input_file)  # Read the extracted text from the input file
     chunks = chunk_text(text, chunk_size, overlap)  # Chunk the text into smaller parts
-    # print(f"Text divided into {len(chunks)} chunks.")
     save_chunks(chunks, output_dir)  # Save the chunks to the specified directory
-    # print(f"Chunks saved in the '{output_dir}' directory.")
     chunk_length = len(chunks)
 
     return chunk_length
