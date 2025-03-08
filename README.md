@@ -9,7 +9,9 @@ With **SmartDocs**, you can:
 
 Whether you're a researcher, student, or professional, **SmartDocs** streamlines the way you engage with PDFs, making information retrieval effortless and efficient.  
 
-📹 **Watch the Demo Video**: [SmartDocs Demo](demo/SmartDocs_Preview.mp4)
+📹 **Watch the Demo Video**:
+
+https://github.com/user-attachments/assets/4fc08957-3447-4b3d-b5fe-ef8d70782646
 
 ---
 
